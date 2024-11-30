@@ -1,0 +1,509 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://preview.redd.it/c2wi4pwsa3i41.jpg?auto=webp&s=0924e8fbe3cc6a383d874b6bf9e08c79ec211b31');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 10;
+}
+
+header{    
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0 2vw;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+header h1{
+    margin: 0;
+    font-size: 2rem;
+}
+
+.hamburger {
+    height: 1.5vw;
+    width: 1.7vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    position: relative;
+    z-index: 20;
+}
+
+.hamburger div {
+    width: 100%;
+    height: 0.2vw;
+    background-color: black;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.hamburger.active div:nth-child(1) { transform: rotate(45deg) translateY(0.85vw); }
+.hamburger.active div:nth-child(2) { opacity: 0; }
+.hamburger.active div:nth-child(3) { transform: rotate(-45deg) translateY(-0.85vw); }
+
+.menu {
+    position: absolute;
+    top: 5vw;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    z-index: 10;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+  .menu ul {
+    padding: 0;
+    margin: 1vw 3vw;
+  }
+
+  .menu ul li a {
+    color: rgb(36, 36, 36);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
+
+.mainContent {
+    display: grid; 
+    grid-template-columns: 1fr; 
+    gap: 1vw;
+    padding: 2vw;
+}
+
+.author {
+    text-align: center; 
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2rem 0;
+}
+
+h2 {
+    font-size: 3.2rem;
+    margin: 0;
+}
+
+.author_content {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-top: 2vw;
+}
+
+.author_image {
+    width: 15%; 
+    height: 20vw;
+    background: url('https://moe.shikimori.one/uploads/poster/people/3158/main_alt-84be093ca2d045a13c4e0f5c5408b238.jpeg');
+    background-size: cover;
+    background-position: center;
+    margin: 0 5%;
+    border: .1vw black solid;
+}
+
+.aboutAuthor {
+    width: 75%; 
+    font-size: 1.7rem;
+    padding: 0 2rem;
+}
+
+.characters {
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    gap: 2vw;
+    padding: 1vw 0;
+    overflow: hidden; 
+    white-space: nowrap; 
+    cursor: grab;
+}
+
+.character {    
+    position: relative;
+    margin: 0 1vw;
+    display: inline-block;
+    text-align: center;
+}
+
+.character-image {
+    width: 17vw;
+    height: 13vw;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.3s ease, transform 0.3s ease;
+}
+
+.character-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.comeToEva {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 2rem 0;
+}
+
+.drag-drop-container {
+    display: flex;
+    gap: 10vw;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1vw;
+}
+
+.draggable, .dropzone {
+    width: 22vw;
+    height: 22vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.draggable img, .dropzone img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.draggable { cursor: grab; }
+
+#resetButton {
+    height: 2vw;
+    border-radius: 0.7vw;
+    background: #8c3ebc;
+    color: white;
+    font-size: 1.2rem;
+    padding: 0 1rem;
+    border: none;
+    display: none;
+}
+
+.niceToMeetU {
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+}
+
+.niceToMeetU input {
+    width: 20vw;
+    padding: .5vw;
+    border-radius: .4vw;
+    font-size: 1.2rem;
+}
+
+.niceToMeetU button {
+    padding: .8vw 1.6vw;
+    background-color: #631b7e;
+    color: #ffffff;
+    border: none;
+    border-radius: .4vw;
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-bottom: 1vw;
+}
+
+.findImposter {
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+}
+
+.findImposter .choice-block {
+    text-align: center;
+    padding: 2vw;
+}
+
+.findImposter .choice-block select {
+    padding: .7vw;
+    margin: 1vw;
+    font-size: 1.5rem;
+}
+
+.findImposter .choice-block label {
+    margin: 1vw;
+    font-size: 1.5rem;
+}
+
+.findImposter .links {
+    margin-top: 1vw;
+}
+.findImposter .links a {
+    display: block;
+    text-decoration: none;
+    color: #9027a5;
+    font-size: 2.1rem;
+}
+
+.findImposter .links h3 {
+    font-size: 2.7rem;
+}
+
+.findImposter .links a:hover {
+    text-decoration: underline;
+}
+
+.findImposter button {
+    padding: .8vw 1.6vw;
+    background-color: #631b7e;
+    color: #ffffff;
+    border: none;
+    border-radius: .4vw;
+    cursor: pointer;
+    font-size: 1.3rem;
+    margin-bottom: 1vw;
+}
+
+.charactersTable {
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    text-align: center;
+}
+
+.charactersTable table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: 1.2vw 0;
+    background-color: #fff;
+}
+.charactersTable th, td {
+    padding: .6vw;
+    font-size: 1.3rem;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+.charactersTable th {
+    background-color: #7a3fb5;
+    color: white;
+}
+.charactersTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+.charactersTable tr:hover {
+    background-color: #f1f1f1;
+}
+
+.realContent {
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+    text-align: center;
+}
+
+
+.realContent table {
+    width: 70%;
+    border-collapse: collapse;
+    margin-bottom: 3vw;
+  }
+
+.realContent th, td {
+    border: 1px solid black;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.realContent iframe {
+    width: 100%;
+    height: auto;
+}
+
+.responsive-iframe {
+    aspect-ratio: 16 / 9; /* Соотношение сторон для видео */
+}
+
+.howDidKaoruDie {
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1vw;
+}
+
+.howDidKaoruDie .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    flex-wrap: wrap; 
+}
+
+.image-container img {
+    width: 20vw;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    text-align: left;
+}
+
+.form-container label {
+    display: block;
+    font-size: 1.7rem;
+}
+
+#submit-button {
+    padding:.5vw 2vw;
+    background-color: #7a3fb5;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    border-radius: .5vw;
+    margin: 1vw 0;
+}
+
+#submit-button:hover {
+    background-color: #5c2e8e;
+}
+
+input[type="checkbox"] { transform: scale(1.5); }
+
+.baddie {
+    background: rgba(255, 255, 255, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1vw;
+}
+
+.baddie .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem; 
+    margin: 1rem;
+    flex-wrap: wrap;
+}
+
+#responsiveCanvas {
+    display: block;
+    margin: 0 auto;
+    background-color: black;
+}
+
+.text-block {
+    font-size: 2.2rem;
+    text-align: center;
+    width: 70%;
+}
+
+footer{    
+    height: 5vw;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+    body { background-position: top end; }
+    header { height: 7vw; }    
+    header h1{ font-size: 1.2rem; }
+    .hamburger { height: 4.5vw; width: 4.7vw; }    
+    .hamburger div { height: 0.5vw; }
+    .hamburger.active div:nth-child(1) { transform: rotate(45deg) translateY(2.8vw); }
+    .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translateY(-2.8vw); }
+    .menu { top: 7vw; }
+    .menu ul { margin: 1vw 6vw; }
+    .menu ul li a { font-size: 1.2rem; }
+    .mainContent { gap: 7vw; }
+    h2 { font-size: 1.9rem; }
+    .author_content { flex-direction: column; align-items: center; }
+    .author_image, .aboutAuthor { width: 80%; margin-bottom: 2vw; }
+    .author_image { width: 40%; height: 60vw;}
+    .aboutAuthor p { font-size: 1rem; }
+    .character-image { width: 40vw; height: 33vw; }    
+    .character-name { font-size: .9rem; }
+    .draggable, .dropzone { width: 41vw; height: 41vw; }
+    #resetButton { height: 7vw; border-radius: 2vw; }
+    .niceToMeetU input { width: 40vw; padding: 1.2vw; border-radius: 1.4vw; font-size: 1rem; }    
+    .niceToMeetU button { padding: 1.3vw 2.6vw; border-radius: 1.7vw; font-size: 1.3rem; margin-bottom: 3vw; }
+    .findImposter .choice-block select { padding: .7vw; margin: 3vw; font-size: 1.1rem; } 
+    .findImposter .links a { font-size: 1.1rem; }    
+    .findImposter .links h3 { font-size: 1.3rem; margin: 1.7vw; }    
+    .findImposter .links a:hover { text-decoration: underline; }    
+    .findImposter button { padding: 1.8vw 5.6vw; border-radius: 2.4vw; margin: 3vw 0; }
+    .charactersTable table { width: 90%; }
+    .charactersTable th, td { padding: .9vw; font-size: .8rem; }
+    .realContent table { display: block; overflow-x: auto; }
+    .realContent th, td { font-size: 1.1rem }
+    .howDidKaoruDie .container { flex-direction: column; align-items: stretch; }
+    .image-container img { width: 70vw; margin: 0 auto; }
+    .form-container label { display: block; font-size: 1.2rem; }    
+    #submit-button { padding: 1.5vw 5vw; font-size: .9rem; border-radius: 1.1vw; margin: 3vw 0; }
+    .baddie .container { flex-direction: column; }
+    .text-block { font-size: 1.1rem; width: 100%; }
+    footer{ height: 11vw; }
+}
+
+
+
+
+
+@media (max-width: 480px) {
+    body { background-position: center top; }
+    header { height: 17vw; } 
+    .hamburger.active div:nth-child(1) { transform: rotate(45deg) translateY(2.7vw); }
+    .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translateY(-2.7vw); }
+    .menu { top: 17vw; }
+    h2 { font-size: 1.2rem; }
+    .character-image { width: 80vw; height: 73vw; } 
+    .character-name { font-size: .9rem; }
+    .draggable, .dropzone { width: 41vw; height: 81vw; }
+    #resetButton { height: 7vw; border-radius: 2vw; }
+    footer{ height: 17vw; }
+    .mainContent { gap: 10vw; }
+    .niceToMeetU input { width: 70vw; font-size: .8rem; }    
+    .niceToMeetU button { padding: 2.3vw 13vw; font-size: 1rem; }    
+    .findImposter .choice-block select { padding: .7vw; margin: 7vw; font-size: 1.1rem; }    
+    .findImposter .choice-block label { margin: 1vw; font-size: 1.5rem; }
+    .findImposter .links a { font-size: 1.1rem; }    
+    .findImposter .links h3 { font-size: 1.3rem; margin: 1.7vw; }    
+    .findImposter .links a:hover { text-decoration: underline; }    
+    .findImposter button { padding: 1.8vw 5.6vw; border-radius: 3.4vw; margin: 7vw 0; }
+    .realContent iframe { height: 200px; }
+}

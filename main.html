@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Евангелион шизы</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=PT+Sans&display=swap" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/ru/f/f2/Nervlogo.jpg" type="image/x-icon">
+    <script src="script.js"></script>
+</head>
+<body>
+    <header id="header">
+        <h1>Евангелион 6.66: Ты (не) сумасшедший</h1>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <div class="menu" id="menu">
+          <ul>
+            <li><a href="#genius">Автор</a></li>
+            <li><a href="#guessWhoDied">Команда скрепышей</a></li>
+            <li><a href="#baddie">Злодейские злодеи (это про канвас)</a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="mainContent">
+        <div class="author" id="genius">
+            <h2>Что за гений это придумал?</h2>
+            <div class="author_content">
+                <div class="author_image"></div>
+                <div class="aboutAuthor">
+                    <h2>&#x2661;&#x2661;&#x2661; Ёсиюки Садамото &#9825;&#9825;&#9825;</h2>
+                    <p><strong>Родился:</strong> 29 января 1962 г.</p>
+                    <p>Стал знаменит благодаря манге Neon Genesis Evangelion, где он решил, что роботы и психология подростков — это вообще отличная идея. Карьеру начал в 80-х, и с тех пор не оставляет нас в покое своими произведениями, где люди в депрессии, а гигантские монстры не дают отдохнуть.<br>
+                        Его стиль рисования — это как японская анимация, но с излишним вниманием к деталям и сложной философией. Он также работал над Oh My Goddess! — да, тот самый Садамото, который создает боги, а потом устраивает апокалипсис.<br>                        
+                        В общем, Садамото — мастер того, чтобы рисовать так, чтобы ты не знал, что с этим делать, но всё равно продолжал читать.</p>
+                </div>
+            </div>
+        </div>
+        <!-- надо придумать как обыграть ссылку на покупку и/или читалку евы. можно сделать опрос, по типу прочитал ли ты евангелион и если нет - ссылка на читалку/покупку, если да - ссылка на психдиспансер -->
+        <div class="findImposter" id="findImposter">
+            <div class="choice-block">
+                <h2>Шаришь за евангелион???</h2>
+                <select id="actionSelector">
+                    <option value="" selected>Определить судьбу</option>
+                    <option value="showLinks">Нет</option>
+                    <option value="redirect">Да</option>
+                </select>
+                <form id="choiceForm">
+                    <label>
+                        <input type="radio" name="action" value="showLinks"> Нет
+                    </label>
+                    <label>
+                        <input type="radio" name="action" value="redirect"> Да
+                    </label>
+                    <button type="button" id="submitBtn">Определить судьбу</button>
+                </form>
+                <div class="links" id="links" style="display: none;">
+                    <h3>Надо шарить!!!</h3>
+                    <a href="https://mangalib.me/ru/manga/197--evangelion">Манга: читать</a>
+                    <a href="https://istari.ru/katalog-knig/manga/evangelion/">Манга: купить</a>
+                    <a href="https://jut-su.net/221-evangelion-novogo-pokolenija-h1.html">Анимешку посмотреть</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- поле для ввода имени и сделать мем с ты тоже аянами рей -->
+        <div class="niceToMeetU" id="niceToMeetU">
+            <h2>Самое время познакомиться</h2>
+            <input type="text" id="nameInput" placeholder="Введите ваше имя">
+            <button id="greetButton">Стать частью NERV</button>
+        </div>
+
+        <!-- здесь прокрутку с персами и чтобы при наведении менялась картинка и подпись 
+         надо сделать переход вниз на описание персов через список-->
+         <div class="characters" id="guessWhoDied">
+            <div class="character" id="character8">
+                <div class="character-image" style="background-image: url('https://sun9-72.userapi.com/impg/BZDgKow0x0jLp5ntJxk2qpSLSNf5s8gjhC2vHQ/VhBU-YUpSkE.jpg?size=985x644&quality=96&sign=3adcabd281fdc630f0d8396d905aa236&type=album');"></div>
+                <div class="character-name">Каору Нагиса</div>
+            </div>
+            <div class="character" id="character2">
+                <div class="character-image" style="background-image: url('https://i.pinimg.com/736x/83/11/0c/83110c6604f80210bfce7171ca7b2024.jpg');"></div>
+                <div class="character-name">Мисато Кацураги</div>
+            </div>
+            <div class="character" id="character6">
+                <div class="character-image" style="background-image: url('https://cs5.pikabu.ru/images/big_size_comm/2015-10_4/1445254969160623708.jpg');"></div>
+                <div class="character-name">Гэндо Икари</div>
+            </div>
+            <div class="character" id="character1">
+                <div class="character-image" style="background-image: url('https://storage.yandexcloud.net/otakuy-media/post_media/82627930-43ce-11ef-9684-ae54f4e7377a');"></div>
+                <div class="character-name">Синдзи Икари</div>
+            </div>
+            <div class="character" id="character4">
+                <div class="character-image" style="background-image: url('https://cs9.pikabu.ru/post_img/big/2019/09/03/6/1567499274152957859.png');"></div>
+                <div class="character-name">Аска Лэнгли Сорью</div>
+            </div>
+            <div class="character" id="character9">
+                <div class="character-image" style="background-image: url('https://i.pinimg.com/736x/d3/cd/7f/d3cd7f957be8ed69264adf2258e63418.jpg');"></div>
+                <div class="character-name">Пен-Пен</div>
+            </div>
+            <div class="character" id="character3">
+                <div class="character-image" style="background-image: url('https://lh6.googleusercontent.com/proxy/CUDjCBhm_N4pry-hcOfw7bdIKNW2jTpAOrRgnWl3WThrmHxmOl1lwCSxzXct77YN67qehTRSsYEhanIFbhbEN1t0U4w');"></div>
+                <div class="character-name">Рей Аянами</div>
+            </div>
+            <div class="character" id="character10">
+                <div class="character-image" style="background-image: url('https://evanotend.com/wp-content/uploads/2021/08/b428bc797c95a4ebaab3726508da8f37.jpg');"></div>
+                <div class="character-name">Ангелы</div>
+            </div>
+            <div class="character" id="character5">
+                <div class="character-image" style="background-image: url('https://lh6.googleusercontent.com/proxy/oCIQK_XrmxBIx-MV7gvBsjglfWtezpTwcKCDEaLLBZi48cv6ZEpZSRmjsXy0Skr8aAUoZidARQdZRBwsBTfDLGM2c9w');"></div>
+                <div class="character-name">Рицуко Акаги</div>
+            </div>
+            <div class="character" id="character7">
+                <div class="character-image" style="background-image: url('https://i.pinimg.com/736x/fc/fc/54/fcfc5417e3b862835fae3b8b833ac89b.jpg');"></div>
+                <div class="character-name">Рёдзи Кадзи</div>
+            </div>
+        </div>
+
+        <!-- здесь хуякнем перетаскивание синдзи в робота -->
+        <div class="comeToEva" id="comeToEva">
+            <h2>Давайте поможем Синдзи сесть в Еву-01</h2>
+            <div class="drag-drop-container">
+                <div id="draggable" class="draggable" draggable="true">
+                    <img src="https://anime-chan.me/uploads/posts/2012-10/1349678671_26_c343_shinji-grin.jpg" alt="Радостный Синдзи">
+                </div>
+                <div id="dropzone" class="dropzone">
+                    <img src="https://i.pinimg.com/474x/c6/ed/0d/c6ed0dab0e48f5c849c718c6f3d16434.jpg" alt="Ева 01">
+                </div>
+            </div>
+            <button id="resetButton">Позволить Синдзи выйти</button>
+        </div>
+
+        <!-- таблица с имененм персонажа, возраст, статус (жив/мертв/никто не знает) -->
+        <div class="charactersTable" id="charactersTable">
+            <h2>Знакомимся поближе с персонажиками</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Герой</th>
+                        <th>Досье</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Каору Нагиса</td>
+                        <td>Мистер «Включай Баха, я тут, чтобы спасти твой плейлист и сердце». Меломан и эксперт по дружбе за один день. Угадайте кто умрет в 100 из 100 случаев, но пообещает встретиться в следующей жизни и сдержит это, но потом опять умрет?</td>
+                    </tr>
+                    <tr>
+                        <td>Мисато Кацураги</td>
+                        <td>Королева пива и неудобных семейных разговоров. Если бы хаос был человеком, он пил бы с ней.</td>
+                    </tr>
+                    <tr>
+                        <td>Гэндо Икари</td>
+                        <td>Тот самый батя, который ушёл за сигаретами, но вместо этого создал мировую катастрофу.</td>
+                    </tr>
+                    <tr>
+                        <td>Синдзи Икари</td>
+                        <td>Жертва семейных драм, главный герой мемов "Полезай в робота, Синдзи!" и чемпион по нытью.</td>
+                    </tr>
+                    <tr>
+                        <td>Аска Лэнгли Сорью</td>
+                        <td>Тайфун с красными волосами и любовью к пассивной агрессии. "Я не дерзкая, я просто лучше всех."</td>
+                    </tr>
+                    <tr>
+                        <td>Пен-Пен</td>
+                        <td>Самый адекватный персонаж сериала. Живёт с Мисато и явно жалеет об этом.</td>
+                    </tr>
+                    <tr>
+                        <td>Рей Аянами</td>
+                        <td>Дочь лаборатории и фанатка холодного тона общения. Религиозные отсылки идут в комплекте.</td>
+                    </tr>
+                    <tr>
+                        <td>Ангелы</td>
+                        <td>Группа ребят, которые пришли "спасти мир", но забыли сообщить об этом людям. Босс-файты года.</td>
+                    </tr>
+                    <tr>
+                        <td>Рицуко Акаги</td>
+                        <td>Гений, учёная и мастер говорить скучные вещи сложными словами. Мозг сериала, но не его душа.</td>
+                    </tr>
+                    <tr>
+                        <td>Рёдзи Кадзи</td>
+                        <td>Шпион, плейбой и фермер-любитель. Его арбузы выращены на секретах, интригах и флирте.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- сделать многовыборный список, где надо выбрать, как умер каору, но закинуть мемчики -->
+        <div class="howDidKaoruDie" id="howDidKaoruDie">
+            <div class="container">
+                <div class="image-container">
+                    <img id="main-image" src="https://animepersona.com/wp-content/uploads/2024/04/1-104.webp" alt="Каору">
+                </div>
+                <div class="form-container">
+                    <h2>Как умер Каору?</h2>
+                    <form id="selection-form">
+                        <label>
+                            <input type="checkbox" name="option" value="1"> Головокружительно
+                        </label>
+                        <label>
+                            <input type="checkbox" name="option" value="2"> Душесжимающе
+                        </label>
+                        <label>
+                            <input type="checkbox" name="option" value="3"> Бомбически
+                        </label>
+                        <button type="button" id="submit-button">Отправить</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- хуячим канвас с эмблемой или что это ангелов ну или нерва и + описание -->
+        <div class="baddie" id="baddie">
+            <h2>Познакомимся с SEELE, они же злодеи</h2>
+            <div class="container">
+                <div class="canvas-container">
+                    <canvas id="responsiveCanvas" width="512" height="512"></canvas>
+                </div>
+                <div class="text-block">
+                    SEELE — это группа дедов, которые решили, что лучше знают, как спасти человечество. Спойлер: их план — это объединить всех в один большой суп из душ, потому что "коммуникация слишком сложна". <br>
+                    Они управляют всем через таинственные монолиты, но по сути это как зум-конференция, только без лиц. Всё ради проекта "Комплементации", который звучит как название крема для рук, но на деле это апокалипсис с философией.<br>
+                    Главное правило SEELE: если что-то пошло не так — это всё вина Гэндо. Ну, или так было задумано.
+                </div>
+            </div>
+        </div>
+
+        <!-- аудио плеер и видео с каору -->
+        <div class="realContent" id="realContent">
+            <h2>Слушаем песенки и плачем!!!</h3>
+            <table>
+                <tr>
+                    <th>Видео</th>
+                    <th>Аудио</th>
+                </tr>
+                <tr>
+                    <td><iframe class="responsive-iframe" src="https://www.youtube.com/embed/o6wtDPVkKqI?si=shBSFLBumGjtZ4Ts" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+                    <td><iframe class="responsive-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/3dDZFJSvdT9N2nNAdsE9j2?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></td>
+                </tr>
+                <tr>
+                    <td><iframe class="responsive-iframe" src="https://www.youtube.com/embed/WauSz9mm32Y?si=8qyyuOWMHO2vsl2V" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+                    <td><iframe class="responsive-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/0fkL0fOhEzRK8WFe2ixt2d?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></td>
+                </tr>
+                <tr>
+                    <td><iframe class="responsive-iframe" src="https://www.youtube.com/embed/hDvPa6tnU64?si=0-aadk-hieBe3LvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></td>
+                    <td><iframe class="responsive-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/7c59LJZv6klezUN3jRCXE6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></td>
+                </tr>
+              </table>
+        </div>
+    </div>
+    <footer id="footer">
+        <h2>Вы сумасшедший, поздравляю!</h2>
+    </footer>
+</body>
+</html>
